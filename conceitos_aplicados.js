@@ -93,13 +93,13 @@ const somarNumeros = (array) => {
     return somaArray
 }
 
+//9. Contar até 10 com while
+//Enunciado: Imprima os números de 1 a 10 com while.
 const whileAteDez = () => {
 
     var i = 1
 
-    const texto = readlineSync.question("Digite algo: ")
-
-    if (texto === 'Sair' ) {
+    if (texto === 'Sair') {
         return true
     }
 
@@ -110,7 +110,26 @@ const whileAteDez = () => {
 
 }
 
-whileAteDez()
+//10. Repetir pergunta até digitar "sair" (while)
+//Enunciado: Crie um loop que só para quando o usuário digitar "sair" (pode simular com array de entradas).
+const coletarEntradasAteSair = () => {
 
+    var i = 1
+    var array = []
 
+    while (true) {
+        let texto = readlineSync.question("Digite algo, para sair digite 'Sair': ")
+        if (texto === 'Sair') {
+            console.log("Saindo do loop...")
+            break
+        } else {
+            console.log(`Você digitou: ${texto}`)
+        }
+        array.push(texto)
+    }
 
+    console.log("Você digitou: " + array.join(", "))
+    return array
+}
+
+coletarEntradasAteSair();
